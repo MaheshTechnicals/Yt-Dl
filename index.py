@@ -33,5 +33,5 @@ def get_video_info():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    port = int(os.getenv('PORT', 5000))  # Default to port 5000 if not specified
+    port = int(os.getenv('PORT', 1000))  # Default to port 5000 if not specified
     app.run(debug=True, port=port)
