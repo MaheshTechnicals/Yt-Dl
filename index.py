@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, jsonify
 from pytube import YouTube
 
@@ -32,4 +33,5 @@ def get_video_info():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.getenv('PORT', 5000))  # Default to port 5000 if not specified
+    app.run(debug=True, port=port)
